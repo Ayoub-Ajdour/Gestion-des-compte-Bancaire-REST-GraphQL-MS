@@ -1,0 +1,20 @@
+scalar DateTime
+
+type Mutation {
+    addAccount(id: String, createAt: DateTime, balance: Float, currency: String, type: String): Bankaccount
+    updateAccount(id: String, createAt: DateTime, balance: Float, currency: String, type: String): Bankaccount
+    deleteAccount(id: String): Boolean
+}
+
+type Query {
+    accountsList: [Bankaccount],
+    accountById(id: String): Bankaccount
+}
+
+type Bankaccount {
+    id: String,
+    createAt: String,
+    balance: Float,
+    currency: String,
+    type: String
+}
